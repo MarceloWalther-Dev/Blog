@@ -1,0 +1,33 @@
+<%- include ('partials/header.ejs') %>
+<%- include ('partials/homeNavBar.ejs') %> 
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4">Bem vindo!</h1>
+            <p class="lead">Este é um simples projeto onde mostro um crud simples utilizando Node.js.</p>
+            <hr class="my-4">
+            <p style="font-size:19px;"> <b> Algumas bibliotecas utilizadas, body-parser, ejs, express, mysql2, nodemon, sequelize, slugify, bcryptjs, express-session </b></p>
+            <a class="btn btn-primary btn-lg" href="https://cursos.alura.com.br/user/marcelowdsilva/fullCertificate/5eace7f9b1345476e40a2dc0ad848b79" target="_blank" role="button">Certificados</a>
+          </div>
+          <hr>
+        <% articles.forEach(article => { %>
+            <div class="card">
+                <div class="card-header">
+                    <h2><%= article.title %> </h2>
+                </div>
+                <div class="card-body">
+                    <a class="btn btn-success" href="/<%= article.slug %> ">Ler Artigo</a>
+                </div>
+            </div>
+        <% }) %>
+
+        <div class="row">
+            <div class="col col-xs-12">
+                <!-- <a href="/articles/page" style="float: left; margin-top: 15px;"><<<< Prev</a> -->
+                <a class="btn btn-primary" href="/articles/page/2" style="float: right; margin-top: 15px;">Next ></a>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+<%- include ('partials/footer.ejs') %>
